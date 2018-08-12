@@ -21,8 +21,12 @@ Left: 2
 Right: 3
 Button A: 4
 Button B: 5
-Start: 6
-Select: 7
+Button X (Optional): 6
+Button Y (Optional): 7
+Start: 8
+Select: 9
+Button L: A
+Button R: B
 ```
 
 After you've set that up, open up your terminal and type `python serve.py`. If your username/password is wrong you will be notified.
