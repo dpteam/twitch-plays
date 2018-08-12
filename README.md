@@ -34,9 +34,10 @@ After you've set that up, open up your terminal and type `python serve.py`. If y
 Whilst the script is running make sure you have your emulator in focus as your primary window. If you click onto another window, the script won't work. If you're not able to stay focused on one window as you need to do other things with your computer, you could try running all of this from within a virtual machine.
 
 --
-Modified by JackNet
 
-If you have any question or need help, feel free to [message the original creator on Twitch](http://www.twitch.tv/message/compose?to=aidraj_) or send an email to `aidraj0 at gmail dot com`.
+Button modification by JackNet
+
+Original code by [adriaj_ on twitch](http://www.twitch.tv/aidraj_)
 
 You'll need to have VBA in focus for this to work, so your best bet would be to run all of this
 from within a VM.
