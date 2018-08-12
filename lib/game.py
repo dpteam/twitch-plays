@@ -15,8 +15,8 @@ class Game:
         #'y': 0x37,
         'start': 0x38,
         'select': 0x39,
-        #'l': 0x41,
-        #'r': 0x42
+        'l': 0x41,
+        'r': 0x42
     }
 
     def get_valid_buttons(self):
