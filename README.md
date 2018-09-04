@@ -37,7 +37,7 @@ Whilst the script is running make sure you have your emulator in focus as your p
 
 Button modification by JackNet
 
-Original code by [adriaj_ on twitch](http://www.twitch.tv/aidraj_)
+Original code by [aidraj_ on twitch](http://www.twitch.tv/aidraj_)
 
 You'll need to have VBA in focus for this to work, so your best bet would be to run all of this
 from within a VM.
