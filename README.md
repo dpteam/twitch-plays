@@ -3,16 +3,25 @@ Twitch Plays
 
 Clone of [Twitch Plays Pokemon](http://twitch.tv/twitch_plays_pokemon).
 
+Modifications by JackNet.
 
+Original code by [Aidan Thomson](https://github.com/aidanrwt/).
 
-Installation
+Under the MIT license.
+
+Requirements
 ============
 
-You're going to need to have [pywin32](http://sourceforge.net/projects/pywin32/) installed. If you run into any errors try running this with Python [2.7.x](http://www.python.org/download/releases/2.7/).
+At this time, the program will only work on Microsoft Windows due to the reliance of Windows API calls through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/), which must be installed alongside a normal Python installation. A *nix port is to be worked on.
 
-Rename `config/config_dist.py` to `config/config.py`, and replace the username/password there with your Twitch username and [OAuth token](http://www.twitchapps.com/tmi/). Feel free to modify the start throttle here aswell.
+[3.x releases](https://www.python.org/downloads/) of Python might work, but should errors arise while trying to run the program under 3.x, try using [2.7.x releases](http://www.python.org/download/releases/2.7/) instead.
 
-In your VBA/Emulator, set the controls to the following -
+How To Run
+============
+
+Rename `config/config_dist.py` to `config/config.py` and replace the default username/password values with your Twitch username and [OAuth token](http://www.twitchapps.com/tmi/). Feel free to modify button throttles there aswell.
+
+In your Emulator, set the controls to the following keys:
 
 ```
 Up: 0
@@ -21,23 +30,16 @@ Left: 2
 Right: 3
 Button A: 4
 Button B: 5
-Button X (Optional): 6
-Button Y (Optional): 7
+Button X: 6
+Button Y: 7
 Start: 8
 Select: 9
 Button L: A
 Button R: B
 ```
 
-After you've set that up, open up your terminal and type `python serve.py`. If your username/password is wrong you will be notified.
+If necessary, comment out any buttons you don't want to use in the `lib/game.py` script.
 
-Whilst the script is running make sure you have your emulator in focus as your primary window. If you click onto another window, the script won't work. If you're not able to stay focused on one window as you need to do other things with your computer, you could try running all of this from within a virtual machine.
+After setup, open up your terminal and type `python serve.py`. If your username/password is wrong, you will be notified.
 
---
-
-Button modification by JackNet
-
-Original code by [aidraj_ on twitch](http://www.twitch.tv/aidraj_)
-
-You'll need to have VBA in focus for this to work, so your best bet would be to run all of this
-from within a VM.
+Whilst the script is running, make sure you have the emulator in focus as your primary window since the commands are only sent to the active window. If you click onto another window, the keypresses might disrupt operation of the program in focus. If you're unable to maintain a window focused should you need to do other things with your computer, run the emulator and script within a virtual machine.

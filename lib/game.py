@@ -5,14 +5,15 @@ import time
 class Game:
 
     keymap = {
+        # Comment out any button(s) that would be unused
         'up': 0x30,
         'down': 0x31,
         'left': 0x32,
         'right': 0x33,
         'a': 0x34,
         'b': 0x35,
-        #'x': 0x36,
-        #'y': 0x37,
+        'x': 0x36,
+        'y': 0x37,
         'start': 0x38,
         'select': 0x39,
         'l': 0x41,
