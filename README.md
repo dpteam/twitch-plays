@@ -12,7 +12,7 @@ Under the MIT license.
 Requirements
 ============
 
-At this time, the program will only work on Microsoft Windows due to the reliance of Windows API calls through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/) to perform keystrokes, which must be installed alongside a normal Python installation. A *nix port is to be worked on.
+At this time, the program will only work on Microsoft Windows due to the reliance of Windows API calls to perform keystrokes through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/), which must be installed alongside a normal Python installation. A *nix port is to be worked on.
 
 [3.x releases](https://www.python.org/downloads/) of Python might work, but should errors arise while trying to run the program under 3.x, try using [2.7.x releases](http://www.python.org/download/releases/2.7/) instead.
 
