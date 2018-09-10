@@ -1,11 +1,11 @@
-Twitch Plays
+Twitch Plays (Legacy version)
 ============
 
 Clone of [Twitch Plays Pokemon](http://twitch.tv/twitch_plays_pokemon).
 
 Modifications by JackNet.
 
-Original code by [Aidan Thomson](https://github.com/aidanrwt/).
+Original code by [aidanrwt](https://github.com/aidanrwt/).
 
 Under the MIT license.
 

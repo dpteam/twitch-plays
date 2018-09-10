@@ -1,9 +1,15 @@
-Twitch Plays (forked by ynohtna92)
+Twitch Plays
 ==================================
 
 Look alike of [Twitch Plays Pokemon](http://twitch.tv/twitchplayspokemon).
 
 Windows, OSX and Linux
+
+Initially written by [aidanrwt](https://github.com/aidanrwt)
+
+Forked version by [ynohtna92](https://github.com/ynohtna92)
+
+Button modification and testing by [JackNet](https://github.com/Jacknet)
 
 <p align="center">
   <img src="https://camo.githubusercontent.com/c75af50cf9fbbb206d7ec171d1a3925ba6ef3f9d/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f323234353331382f323234333530322f62643330356564322d396432632d313165332d393733642d3237636633393830646361372e706e67" alt="Demonstration broadcasting object">
@@ -34,8 +40,12 @@ Left: 2
 Right: 3
 Button A: 4
 Button B: 5
-Start: 6
-Select: 7
+Button X: 6
+Button Y: 7
+Start: 8
+Select: 9
+Button L: A
+Button R: B
 ```
 Keymaps for windows linux are listed in game.py and can be changed there. 
 

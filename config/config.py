@@ -20,7 +20,7 @@ config = {
 	# List of commands to filter
 	# if adding more keys remember to update the game.py keymaps to reflect these changes
 	'commands': [
-		'a', 'b', 'left', 'right', 'up', 'down', 'start', 'select', 'democracy', 'anarchy'
+		'a', 'b', 'x', 'y', 'left', 'right', 'up', 'down', 'start', 'select', 'l', 'r', 'democracy', 'anarchy'
 	],
 
 	# These commands will not be sent to the buttom feed or poll.
@@ -41,7 +41,7 @@ config = {
 	},
 
 	'anarchy-democracy': {
-		'enabled': True, # This will initate into anarchy mode. Also overrides polling mode enabled flag.
+		'enabled': False, # This will initate into anarchy mode. Also overrides polling mode enabled flag.
 		'size': 1000 # size of vote pool. The larger, the slower it will move, adjust according to how many viewers you have.
 	}
 

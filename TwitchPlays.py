@@ -5,6 +5,7 @@
 # Clone of twitch.tv/twitchplayspokemon
 # Initially written by Aidan Thomson <aidraj0 at gmail dot com>
 # Forked by ynohtna92
+# Button modification and testing by JackNet
 
 import logging
 import sys

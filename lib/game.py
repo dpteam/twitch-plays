@@ -17,8 +17,12 @@ Left: 2
 Right: 3
 Button A: 4
 Button B: 5
-Start: 6
-Select: 7
+Button X: 6
+Button Y: 7
+Start: 8
+Select: 9
+Button L: A
+Button R: B
 
 """
 
@@ -34,20 +38,29 @@ class Game:
             'down': 0x31,
             'left': 0x32,
             'right': 0x33,
-            'a': 0x34, 
+            'a': 0x34,
             'b': 0x35,
-            'start': 0x36,
-            'select': 0x37
+            'x': 0x36,
+            'y': 0x37,
+            'start': 0x38,
+            'select': 0x39,
+            'l': 0x41,
+            'r': 0x42
         }
     else:
         keymap = {
-            'up': ["Up"],
-            'down': ["Down"],
-            'left': ["Left"],
-            'right': ["Right"],
-            'a': ["a"],
-            'b': ["b"],
-            'start': ["Return"]
+            'up': ["0"],
+            'down': ["1"],
+            'left': ["2"],
+            'right': ["3"],
+            'a': ["4"],
+            'b': ["5"],
+            'x': ["6"],
+            'y': ["7"],
+            'start': ["8"],
+            'select': ["9"],
+            'l': ["a"],
+            'r': ["b"]
         }
 
     def enumHandler(self, hwnd, lParam):
