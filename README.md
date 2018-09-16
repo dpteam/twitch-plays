@@ -1,4 +1,4 @@
-Twitch Plays (Legacy version)
+Twitch Plays
 ============
 
 Clone of [Twitch Plays Pokemon](http://twitch.tv/twitch_plays_pokemon).
