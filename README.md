@@ -1,39 +1,29 @@
-Twitch Plays
-==================================
-
-Look alike of [Twitch Plays Pokemon](http://twitch.tv/twitchplayspokemon).
-
-Windows, OSX and Linux
-
-Initially written by [aidanrwt](https://github.com/aidanrwt)
-
-Forked version by [ynohtna92](https://github.com/ynohtna92)
-
-Button modification and testing by [JackNet](https://github.com/Jacknet)
-
-<p align="center">
-  <img src="https://camo.githubusercontent.com/c75af50cf9fbbb206d7ec171d1a3925ba6ef3f9d/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f323234353331382f323234333530322f62643330356564322d396432632d313165332d393733642d3237636633393830646361372e706e67" alt="Demonstration broadcasting object">
-</p>
-
-Installation
+Twitch Plays (Legacy version)
 ============
 
-**Dependencies**
+Clone of [Twitch Plays Pokemon](http://twitch.tv/twitch_plays_pokemon).
 
-* You're going to need to have (**Windows Only**) [pywin32](http://sourceforge.net/projects/pywin32/) installed. If you run into any errors try running this with (**Linux/OSX Only**)Python [2.7.x](http://www.python.org/download/releases/2.7/).
+Modifications by JackNet.
 
-* [irc 8.5.4](https://pypi.python.org/pypi/irc) - IRC Client
+Original code by [aidanrwt](https://github.com/aidanrwt/).
 
-* [Tornado](http://www.tornadoweb.org/en/stable/) - WebSocket Server
+Under the MIT license.
 
-* (**Linux/OSX Only**) xdotool `apt-get install xautomation` 
+Requirements
+============
 
+At this time, the program will only work on Microsoft Windows due to the reliance of Windows API calls to perform keystrokes through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/), which must be installed alongside a normal Python installation. A *nix port is to be worked on.
 
-Replace the username/password in the `config/config.py` file with your Twitch username and [OAuth token](http://www.twitchapps.com/tmi/). Feel free to modify the button toggles among other configuration options.
+[3.x releases](https://www.python.org/downloads/) of Python might work, but should errors arise while trying to run the program under 3.x, try using [2.7.x releases](http://www.python.org/download/releases/2.7/) instead.
 
-In your VBA/Emulator on windows, set the controls to the following -
+How To Run
+============
 
-```python
+Rename `config/config_dist.py` to `config/config.py` and replace the default username/password values with your Twitch username and [OAuth token](http://www.twitchapps.com/tmi/). Feel free to modify button throttles there aswell.
+
+In your Emulator, set the controls to the following keys:
+
+```
 Up: 0
 Down: 1
 Left: 2
@@ -47,29 +37,9 @@ Select: 9
 Button L: A
 Button R: B
 ```
-Keymaps for windows linux are listed in game.py and can be changed there. 
 
-After you've set that up, open up your terminal in the correct directory and type `C:\Python27\python.exe twitchplays.py`.
+If necessary, comment out any buttons you don't want to use in the `lib/game.py` script.
 
-Whilst the script is running **make sure you have your emulator in focus as your primary window**. If you click onto another window, the script won't work. If you're not able to stay focused on one window as you need to do other things with your computer, you could try running all of this from within a virtual machine.
+After setup, open up your terminal and type `python serve.py`. If your username/password is wrong, you will be notified.
 
-Optionally you can use the postmessage option to send input commands. (Only works with some emulators)
-
-If you are using linux there may be an option in the program to recieve background inputs. 
-
-
-You can view the broadcast page which can be freely modified using the provided template. 
-The page is hosted at `127.0.0.1:8888` while running the script. 
-It is updated live and can be broadcasted using regions on your broadcasting software to surround the black box.
-
-
---
-
-If you have any question or need help, feel free to [message me on Twitch](http://www.twitch.tv/message/compose?to=aidraj_) or send an email to `aidraj0 at gmail dot com`.
-
-Alternatively message the owner of this fork at [Twitch](http://www.twitch.tv/message/compose?to=anth92).
-
-Known Issues
-------------
-
-- No underscore character made in the Pokemon GB font causing weird spacing.
+Whilst the script is running, make sure you have the emulator in focus as your primary window since the commands are only sent to the active window. If you click onto another window, the keypresses might disrupt operation of the program in focus. If you're unable to maintain a window focused should you need to do other things with your computer, run the emulator and script within a virtual machine.

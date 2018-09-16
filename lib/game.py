@@ -1,80 +1,27 @@
-import os
+import win32api
+import win32con
 import time
-if os.name == 'nt':
-    import win32com.client
-    import win32con
-    import win32gui
-    import win32api
-else:
-    from subprocess import Popen
-
-"""
-Remap VBA/Emulator keys to the following.
-
-Up: 0
-Down: 1
-Left: 2
-Right: 3
-Button A: 4
-Button B: 5
-Button X: 6
-Button Y: 7
-Start: 8
-Select: 9
-Button L: A
-Button R: B
-
-"""
 
 class Game:
 
-    # keymaps for windows and linux
-    # if adding more keys remember to update the config filters to reflect these changes
-    if os.name == 'nt':
-        # Windows virtual-key codes list can be found here
-        # http://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx
-        keymap = {
-            'up': 0x30,
-            'down': 0x31,
-            'left': 0x32,
-            'right': 0x33,
-            'a': 0x34,
-            'b': 0x35,
-            'x': 0x36,
-            'y': 0x37,
-            'start': 0x38,
-            'select': 0x39,
-            'l': 0x41,
-            'r': 0x42
-        }
-    else:
-        keymap = {
-            'up': ["0"],
-            'down': ["1"],
-            'left': ["2"],
-            'right': ["3"],
-            'a': ["4"],
-            'b': ["5"],
-            'x': ["6"],
-            'y': ["7"],
-            'start': ["8"],
-            'select': ["9"],
-            'l': ["a"],
-            'r': ["b"]
-        }
+    keymap = {
+        # Comment out any button(s) that would be unused
+        'up': 0x30,
+        'down': 0x31,
+        'left': 0x32,
+        'right': 0x33,
+        'a': 0x34,
+        'b': 0x35,
+        'x': 0x36,
+        'y': 0x37,
+        'start': 0x38,
+        'select': 0x39,
+        'l': 0x41,
+        'r': 0x42
+    }
 
-    def enumHandler(self, hwnd, lParam):
-      if self.windowTitle in win32gui.GetWindowText(hwnd):
-        lParam.append(hwnd)
-
-    def __init__(self, config):
-        self.config = config
-        if os.name == 'nt' and self.config['features']['post']:
-            self.windowTitle = self.config['features']['windowTitle']
-            winlist=[]
-            win32gui.EnumWindows(self.enumHandler, winlist)
-            self.HWND = winlist[0]
-            win32gui.ShowWindow(self.HWND, win32con.SW_SHOWNORMAL)
+    def get_valid_buttons(self):
+        return [button for button in self.keymap.keys()]
 
     def is_valid_button(self, button):
         return button in self.keymap.keys()
@@ -83,17 +30,6 @@ class Game:
         return self.keymap[button]
 
     def push_button(self, button):
-        if os.name == 'nt':
-            if self.config['features']['focus']:
-                shell = win32com.client.Dispatch('WScript.Shell')
-                shell.AppActivate(self.config['features']['windowTitle'])
-            if self.config['features']['post']:
-                win32api.PostMessage(self.HWND, win32con.WM_CHAR, self.button_to_key(button), 0)
-            else:
-                win32api.keybd_event(self.button_to_key(button), 0, 0, 0)
-                time.sleep(.07) # Minimum amount of time it takes for the key to register - adjust if nessessary
-                win32api.keybd_event(self.button_to_key(button), 0, win32con.KEYEVENTF_KEYUP, 0)
-        else:
-            Popen(["xdotool", "keydown"] + self.button_to_key(button))
-            time.sleep(.15) # Untested value - adjust if nessessary
-            Popen(["xdotool", "keyup"] + self.button_to_key(button))
+        win32api.keybd_event(self.button_to_key(button), 0, 0, 0)
+        time.sleep(.15)
+        win32api.keybd_event(self.button_to_key(button), 0, win32con.KEYEVENTF_KEYUP, 0)
