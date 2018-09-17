@@ -3,11 +3,11 @@ Twitch Plays
 
 Clone of [Twitch Plays Pokemon](http://twitch.tv/twitch_plays_pokemon).
 
-Modifications by JackNet.
+Modifications by [JackNet](https://github.com/Jacknet).
 
-Original code by [aidanrwt](https://github.com/aidanrwt/twitch-plays).
+Original code by [aidanrwt](https://github.com/aidanrwt).
 
-macOS/Linux/*NIX port by [ynohtna92](https://github.com/ynohtna92/twitch-plays)
+macOS/Linux/*NIX port by [ynohtna92](https://github.com/ynohtna92)
 
 Under the MIT license.
 
