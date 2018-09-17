@@ -7,7 +7,7 @@ Modifications by [JackNet](https://github.com/Jacknet).
 
 Original code by [aidanrwt](https://github.com/aidanrwt).
 
-macOS/Linux/*NIX port by [ynohtna92](https://github.com/ynohtna92)
+macOS/Linux/*NIX port merged from [ynohtna92's fork](https://github.com/ynohtna92/twitch-plays)
 
 Under the MIT license.
 
