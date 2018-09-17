@@ -14,9 +14,10 @@ Under the MIT license.
 Requirements
 ============
 
-At this time, the program will only work on Microsoft Windows due to the reliance of Windows API calls to perform keystrokes through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/), which must be installed alongside a normal Python installation. A *nix port is to be worked on.
-
 It is recommended to use [2.7.x releases](http://www.python.org/download/releases/2.7/) of Python.
+
+For Microsoft Windows, keystrokes are performed by utilising Windows API calls through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/), which must be installed alongside a normal Python for Windows installation.
+For macOS/Linux/*NIX installs, keystrokes are performed through xdotool. For Ubuntu/Debian, install it by launching `sudo apt-get install xautomation`.
 
 How To Run
 ============
