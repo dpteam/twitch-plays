@@ -7,23 +7,23 @@ Modifications by [JackNet](https://github.com/Jacknet).
 
 Original code by [aidanrwt](https://github.com/aidanrwt).
 
-macOS/Linux/*NIX port merged from [ynohtna92's fork](https://github.com/ynohtna92/twitch-plays)
+macOS/Linux/*NIX port merged from [ynohtna92's fork](https://github.com/ynohtna92/twitch-plays).
 
 Under the MIT license.
 
 Requirements
 ============
 
-It is recommended to use [2.7.x releases](http://www.python.org/download/releases/2.7/) of Python.
+It is recommended to use the latest [2.7.x release](http://www.python.org/download/releases/2.7/) of Python.
 
-For Microsoft Windows, keystrokes are performed by utilising Windows API calls through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/), which must be installed alongside a normal Python for Windows installation.
+For Microsoft Windows, keystrokes are performed by using Windows API calls through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/), which must be installed alongside a normal Python installation.
 
 For macOS/Linux/*NIX installs, keystrokes are performed through xdotool/xautomation. Check your distro's repositories if it's available for install through your package manager.
 
 How To Run
 ============
 
-Rename `config/config_dist.py` to `config/config.py` and replace the default username/password values with your Twitch username and [OAuth token](http://www.twitchapps.com/tmi/). Feel free to modify button throttles there aswell.
+Rename `config/config_dist.py` to `config/config.py` and replace the default username/password values with your Twitch username and [OAuth token](http://www.twitchapps.com/tmi/). Feel free to modify button throttles there as well.
 
 In your Emulator, set the controls to the following keys:
 
