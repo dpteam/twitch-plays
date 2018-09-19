@@ -33,6 +33,10 @@ class Game:
 		'y+down': 0x00,
 		'y+left': 0x00,
 		'y+right': 0x00,
+		'u+left': 0x00,
+		'u+right': 0x00,
+		'd+left': 0x00,
+		'd+right': 0x00,
 		'up2': 0x00,
 		'up3': 0x00,
 		'up4': 0x00,
@@ -187,6 +191,30 @@ class Game:
 			win32api.keybd_event(0x33, 0, 0, 0)
 			time.sleep(.15)
 			win32api.keybd_event(0x37, 0, win32con.KEYEVENTF_KEYUP, 0)
+			win32api.keybd_event(0x33, 0, win32con.KEYEVENTF_KEYUP, 0)
+		elif button == 'u+left':
+			win32api.keybd_event(0x30, 0, 0, 0)
+			win32api.keybd_event(0x32, 0, 0, 0)
+			time.sleep(.15)
+			win32api.keybd_event(0x30, 0, win32con.KEYEVENTF_KEYUP, 0)
+			win32api.keybd_event(0x32, 0, win32con.KEYEVENTF_KEYUP, 0)
+		elif button == 'u+right':
+			win32api.keybd_event(0x30, 0, 0, 0)
+			win32api.keybd_event(0x33, 0, 0, 0)
+			time.sleep(.15)
+			win32api.keybd_event(0x30, 0, win32con.KEYEVENTF_KEYUP, 0)
+			win32api.keybd_event(0x33, 0, win32con.KEYEVENTF_KEYUP, 0)
+		elif button == 'd+left':
+			win32api.keybd_event(0x31, 0, 0, 0)
+			win32api.keybd_event(0x32, 0, 0, 0)
+			time.sleep(.15)
+			win32api.keybd_event(0x31, 0, win32con.KEYEVENTF_KEYUP, 0)
+			win32api.keybd_event(0x32, 0, win32con.KEYEVENTF_KEYUP, 0)
+		elif button == 'd+right':
+			win32api.keybd_event(0x31, 0, 0, 0)
+			win32api.keybd_event(0x33, 0, 0, 0)
+			time.sleep(.15)
+			win32api.keybd_event(0x31, 0, win32con.KEYEVENTF_KEYUP, 0)
 			win32api.keybd_event(0x33, 0, win32con.KEYEVENTF_KEYUP, 0)
 		elif button == 'up2':
 			while loopCntr < 2:
