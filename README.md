@@ -14,7 +14,7 @@ Under the MIT license.
 Requirements
 ============
 
-It is recommended to use the latest [2.7.x release](http://www.python.org/download/releases/2.7/) of Python.
+Use a [2.7.x release](http://www.python.org/download/releases/2.7/) of Python.
 
 For Microsoft Windows, keystrokes are performed by using Windows API calls through the [PyWin32 extension](http://sourceforge.net/projects/pywin32/), which must be installed alongside a normal Python installation.
 
@@ -42,7 +42,7 @@ Button L: A
 Button R: B
 ```
 
-If necessary, comment out any buttons you don't want to use in the `lib/game.py` script.
+If necessary, comment out any buttons you don't want to use through the `lib/game.py` script.
 
 After setup, open up your terminal and type `python serve.py`. If your username/password is wrong, you will be notified.
 
