@@ -148,7 +148,7 @@ class Game:
 		time.sleep(.15)
 		win32api.keybd_event(x, 0, win32con.KEYEVENTF_KEYUP, 0)
 		win32api.keybd_event(y, 0, win32con.KEYEVENTF_KEYUP, 0)
-    def btnHoldCombo(self, x, y):
+	def btnHoldCombo(self, x, y):
 		win32api.keybd_event(x, 0, 0, 0)
 		win32api.keybd_event(y, 0, 0, 0)
 		time.sleep(.5)
