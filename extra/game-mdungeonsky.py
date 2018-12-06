@@ -20,8 +20,10 @@ class Game:
 		'save': 0x00,
 		'load': 0x00,
 		'l*+a': 0x00,
+		'l*+b': 0x00,
 		'l*+r*': 0x00,
 		'a+b': 0x00,
+		'b+a': 0x00,
 		'b+u': 0x00,
 		'b+d': 0x00,
 		'b+l': 0x00,
@@ -30,7 +32,7 @@ class Game:
 		'b+ur': 0x00,
 		'b+dl': 0x00,
 		'b+dr': 0x00,
-        'b+lu': 0x00,
+		'b+lu': 0x00,
 		'b+ru': 0x00,
 		'b+ld': 0x00,
 		'b+rd': 0x00,
@@ -51,7 +53,7 @@ class Game:
 		'u+r': 0x00,
 		'd+l': 0x00,
 		'd+r': 0x00,
-        'l+u': 0x00,
+		'l+u': 0x00,
 		'r+u': 0x00,
 		'l+d': 0x00,
 		'r+d': 0x00,
@@ -134,7 +136,39 @@ class Game:
 		'd+r6': 0x00,
 		'd+r7': 0x00,
 		'd+r8': 0x00,
-		'd+r9': 0x00
+		'd+r9': 0x00,
+		'l+u2': 0x00,
+		'l+u3': 0x00,
+		'l+u4': 0x00,
+		'l+u5': 0x00,
+		'l+u6': 0x00,
+		'l+u7': 0x00,
+		'l+u8': 0x00,
+		'l+u9': 0x00,
+		'r+u2': 0x00,
+		'r+u3': 0x00,
+		'r+u4': 0x00,
+		'r+u5': 0x00,
+		'r+u6': 0x00,
+		'r+u7': 0x00,
+		'r+u8': 0x00,
+		'r+u9': 0x00,
+		'l+d2': 0x00,
+		'l+d3': 0x00,
+		'l+d4': 0x00,
+		'l+d5': 0x00,
+		'l+d6': 0x00,
+		'l+d7': 0x00,
+		'l+d8': 0x00,
+		'l+d9': 0x00,
+		'r+d2': 0x00,
+		'r+d3': 0x00,
+		'r+d4': 0x00,
+		'r+d5': 0x00,
+		'r+d6': 0x00,
+		'r+d7': 0x00,
+		'r+d8': 0x00,
+		'r+d9': 0x00
 	}
 	def get_valid_buttons(self):
 		return [button for button in self.keymap.keys()]
@@ -192,6 +226,8 @@ class Game:
 		# Too many to count
 		if button == 'l*+a':
 			self.btnCombo(0x41, 0x34)
+		elif button == 'l*+b':
+			self.btnCombo(0x41, 0x35)
 		elif button == 'l*+r*':
 			self.btnCombo(0x41, 0x42)
 		elif button == 'b+u':
@@ -202,7 +238,7 @@ class Game:
 			self.btnRun(0x32)
 		elif button == 'b+r':
 			self.btnRun(0x33)
-		elif button == 'a+b':
+		elif button == 'a+b' or button == 'b+a':
 			self.btnRun(0x34)
 		elif button == 'b+ul' or button == 'b+lu':
 			self.btnRunCombo(0x30, 0x32)
