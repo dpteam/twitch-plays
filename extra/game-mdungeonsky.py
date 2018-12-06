@@ -392,11 +392,11 @@ class Game:
 			self.btnLoopCombo(0x31, 0x33, 8)
 		elif button == 'd+right9':
 			self.btnLoopCombo(0x31, 0x33, 9)
-		elif button == 'save' and username == 'moderator1' or 'moderator2' or 'moderator3':
+		elif button == 'save' and (username == 'moderator1' or username == 'moderator2' or username == 'moderator3'):
 			win32api.keybd_event(0x43, 0, 0, 0)
 			time.sleep(.15)
 			win32api.keybd_event(0x43, 0, win32con.KEYEVENTF_KEYUP, 0)
-		elif button == 'load' and username == 'moderator1' or 'moderator2' or 'moderator3':
+		elif button == 'load' and (username == 'moderator1' or username == 'moderator2' or username == 'moderator3'):
 			win32api.keybd_event(0x44, 0, 0, 0)
 			time.sleep(.15)
 			win32api.keybd_event(0x44, 0, win32con.KEYEVENTF_KEYUP, 0)
