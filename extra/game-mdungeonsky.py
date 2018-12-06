@@ -5,80 +5,80 @@ import time
 class Game:
 	keymap = {
 		# Comment out any button(s) that would be unused
-		'up': 0x30,
-		'down': 0x31,
-		'left': 0x32,
-		'right': 0x33,
+		'u': 0x30,
+		'd': 0x31,
+		'l': 0x32,
+		'r': 0x33,
 		'a': 0x34,
 		'b': 0x35,
 		'x': 0x36,
 		'y': 0x37,
-		'start': 0x38,
-		'select': 0x39,
-		'l': 0x41,
-		'r': 0x42,
+		'st': 0x38,
+		'sl': 0x39,
+		'l*': 0x41,
+		'r*': 0x42,
 		'save': 0x00,
 		'load': 0x00,
-		'l+a': 0x00,
-		'l+r': 0x00,
+		'l*+a': 0x00,
+		'l*+r*': 0x00,
 		'a+b': 0x00,
-		'b+up': 0x00,
-		'b+down': 0x00,
-		'b+left': 0x00,
-		'b+right': 0x00,
-		'b+uleft': 0x00,
-		'b+uright': 0x00,
-		'b+dleft': 0x00,
-		'b+dright': 0x00,
-		'r+a': 0x00,
-		'r+up': 0x00,
-		'r+down': 0x00,
-		'r+left': 0x00,
-		'r+right': 0x00,
-		'x+up': 0x00,
-		'x+down': 0x00,
-		'x+left': 0x00,
-		'x+right': 0x00,
-		'y+up': 0x00,
-		'y+down': 0x00,
-		'y+left': 0x00,
-		'y+right': 0x00,
-		'u+left': 0x00,
-		'u+right': 0x00,
-		'd+left': 0x00,
-		'd+right': 0x00,
-		'up2': 0x00,
-		'up3': 0x00,
-		'up4': 0x00,
-		'up5': 0x00,
-		'up6': 0x00,
-		'up7': 0x00,
-		'up8': 0x00,
-		'up9': 0x00,
-		'down2': 0x00,
-		'down3': 0x00,
-		'down4': 0x00,
-		'down5': 0x00,
-		'down6': 0x00,
-		'down7': 0x00,
-		'down8': 0x00,
-		'down9': 0x00,
-		'left2': 0x00,
-		'left3': 0x00,
-		'left4': 0x00,
-		'left5': 0x00,
-		'left6': 0x00,
-		'left7': 0x00,
-		'left8': 0x00,
-		'left9': 0x00,
-		'right2': 0x00,
-		'right3': 0x00,
-		'right4': 0x00,
-		'right5': 0x00,
-		'right6': 0x00,
-		'right7': 0x00,
-		'right8': 0x00,
-		'right9': 0x00,
+		'b+u': 0x00,
+		'b+d': 0x00,
+		'b+l': 0x00,
+		'b+r': 0x00,
+		'b+ul': 0x00,
+		'b+ur': 0x00,
+		'b+dl': 0x00,
+		'b+dr': 0x00,
+		'r*+a': 0x00,
+		'r*+u': 0x00,
+		'r*+d': 0x00,
+		'r*+l': 0x00,
+		'r*+r': 0x00,
+		'x+u': 0x00,
+		'x+d': 0x00,
+		'x+l': 0x00,
+		'x+r': 0x00,
+		'y+u': 0x00,
+		'y+d': 0x00,
+		'y+l': 0x00,
+		'y+r': 0x00,
+		'u+l': 0x00,
+		'u+r': 0x00,
+		'd+l': 0x00,
+		'd+r': 0x00,
+		'u2': 0x00,
+		'u3': 0x00,
+		'u4': 0x00,
+		'u5': 0x00,
+		'u6': 0x00,
+		'u7': 0x00,
+		'u8': 0x00,
+		'u9': 0x00,
+		'd2': 0x00,
+		'd3': 0x00,
+		'd4': 0x00,
+		'd5': 0x00,
+		'd6': 0x00,
+		'd7': 0x00,
+		'd8': 0x00,
+		'd9': 0x00,
+		'l2': 0x00,
+		'l3': 0x00,
+		'l4': 0x00,
+		'l5': 0x00,
+		'l6': 0x00,
+		'l7': 0x00,
+		'l8': 0x00,
+		'l9': 0x00,
+		'r2': 0x00,
+		'r3': 0x00,
+		'r4': 0x00,
+		'r5': 0x00,
+		'r6': 0x00,
+		'r7': 0x00,
+		'r8': 0x00,
+		'r9': 0x00,
 		'a2': 0x00,
 		'a3': 0x00,
 		'a4': 0x00,
@@ -95,38 +95,38 @@ class Game:
 		'b7': 0x00,
 		'b8': 0x00,
 		'b9': 0x00,
-		'u+left2': 0x00,
-		'u+left3': 0x00,
-		'u+left4': 0x00,
-		'u+left5': 0x00,
-		'u+left6': 0x00,
-		'u+left7': 0x00,
-		'u+left8': 0x00,
-		'u+left9': 0x00,
-		'u+right2': 0x00,
-		'u+right3': 0x00,
-		'u+right4': 0x00,
-		'u+right5': 0x00,
-		'u+right6': 0x00,
-		'u+right7': 0x00,
-		'u+right8': 0x00,
-		'u+right9': 0x00,
-		'd+left2': 0x00,
-		'd+left3': 0x00,
-		'd+left4': 0x00,
-		'd+left5': 0x00,
-		'd+left6': 0x00,
-		'd+left7': 0x00,
-		'd+left8': 0x00,
-		'd+left9': 0x00,
-		'd+right2': 0x00,
-		'd+right3': 0x00,
-		'd+right4': 0x00,
-		'd+right5': 0x00,
-		'd+right6': 0x00,
-		'd+right7': 0x00,
-		'd+right8': 0x00,
-		'd+right9': 0x00
+		'u+l2': 0x00,
+		'u+l3': 0x00,
+		'u+l4': 0x00,
+		'u+l5': 0x00,
+		'u+l6': 0x00,
+		'u+l7': 0x00,
+		'u+l8': 0x00,
+		'u+l9': 0x00,
+		'u+r2': 0x00,
+		'u+r3': 0x00,
+		'u+r4': 0x00,
+		'u+r5': 0x00,
+		'u+r6': 0x00,
+		'u+r7': 0x00,
+		'u+r8': 0x00,
+		'u+r9': 0x00,
+		'd+l2': 0x00,
+		'd+l3': 0x00,
+		'd+l4': 0x00,
+		'd+l5': 0x00,
+		'd+l6': 0x00,
+		'd+l7': 0x00,
+		'd+l8': 0x00,
+		'd+l9': 0x00,
+		'd+r2': 0x00,
+		'd+r3': 0x00,
+		'd+r4': 0x00,
+		'd+r5': 0x00,
+		'd+r6': 0x00,
+		'd+r7': 0x00,
+		'd+r8': 0x00,
+		'd+r9': 0x00
 	}
 	def get_valid_buttons(self):
 		return [button for button in self.keymap.keys()]
@@ -176,125 +176,125 @@ class Game:
 	def push_button(self, button, username):
 		# How much elifs does it take to disorient a programmer?
 		# Too many to count
-		if button == 'l+a':
+		if button == 'l*+a':
 			self.btnCombo(0x41, 0x34)
-		elif button == 'l+r':
+		elif button == 'l*+r*':
 			self.btnCombo(0x41, 0x42)
-		elif button == 'a+b':
-			self.btnCombo(0x34, 0x35)
-		elif button == 'b+up':
+		elif button == 'b+u':
 			self.btnRun(0x30)
-		elif button == 'b+down':
+		elif button == 'b+d':
 			self.btnRun(0x31)
-		elif button == 'b+left':
+		elif button == 'b+l':
 			self.btnRun(0x32)
-		elif button == 'b+right':
+		elif button == 'b+r':
 			self.btnRun(0x33)
-		elif button == 'b+uleft':
+		elif button == 'a+b':
+			self.btnRun(0x34)
+		elif button == 'b+ul':
 			self.btnRunCombo(0x30, 0x32)
-		elif button == 'b+uright':
+		elif button == 'b+ur':
 			self.btnRunCombo(0x30, 0x33)
-		elif button == 'b+dleft':
+		elif button == 'b+dl':
 			self.btnRunCombo(0x31, 0x32)
-		elif button == 'b+dright':
+		elif button == 'b+dr':
 			self.btnRunCombo(0x31, 0x33)
-		elif button == 'r+up':
+		elif button == 'r*+u':
 			self.btnCombo(0x42, 0x30)
-		elif button == 'r+down':
+		elif button == 'r*+d':
 			self.btnCombo(0x42, 0x31)
-		elif button == 'r+left':
+		elif button == 'r*+l':
 			self.btnCombo(0x42, 0x32)
-		elif button == 'r+right':
+		elif button == 'r*+r':
 			self.btnCombo(0x42, 0x33)
-		elif button == 'r+a':
+		elif button == 'r*+a':
 			self.btnCombo(0x42, 0x34)
-		elif button == 'u+left':
+		elif button == 'u+l':
 			self.btnCombo(0x30, 0x32)
-		elif button == 'u+right':
+		elif button == 'u+r':
 			self.btnCombo(0x30, 0x33)
-		elif button == 'd+left':
+		elif button == 'd+l':
 			self.btnCombo(0x31, 0x32)
-		elif button == 'd+right':
+		elif button == 'd+r':
 			self.btnCombo(0x31, 0x33)
-		elif button == 'x+up':
+		elif button == 'x+u':
 			self.btnCombo(0x36, 0x30)
-		elif button == 'x+down':
+		elif button == 'x+d':
 			self.btnCombo(0x36, 0x31)
-		elif button == 'x+left':
+		elif button == 'x+l':
 			self.btnCombo(0x36, 0x32)
-		elif button == 'x+right':
+		elif button == 'x+r':
 			self.btnCombo(0x36, 0x33)
-		elif button == 'y+up':
+		elif button == 'y+u':
 			self.btnCombo(0x37, 0x30)
-		elif button == 'y+down':
+		elif button == 'y+d':
 			self.btnCombo(0x37, 0x31)
-		elif button == 'y+left':
+		elif button == 'y+l':
 			self.btnCombo(0x37, 0x32)
-		elif button == 'y+right':
+		elif button == 'y+r':
 			self.btnCombo(0x37, 0x33)
-		elif button == 'up2':
+		elif button == 'u2':
 			self.btnLoop(0x30, 2)
-		elif button == 'up3':
+		elif button == 'u3':
 			self.btnLoop(0x30, 3)
-		elif button == 'up4':
+		elif button == 'u4':
 			self.btnLoop(0x30, 4)
-		elif button == 'up5':
+		elif button == 'u5':
 			self.btnLoop(0x30, 5)
-		elif button == 'up6':
+		elif button == 'u6':
 			self.btnLoop(0x30, 6)
-		elif button == 'up7':
+		elif button == 'u7':
 			self.btnLoop(0x30, 7)
-		elif button == 'up8':
+		elif button == 'u8':
 			self.btnLoop(0x30, 8)
-		elif button == 'up9':
+		elif button == 'u9':
 			self.btnLoop(0x30, 9)
-		elif button == 'down2':
+		elif button == 'd2':
 			self.btnLoop(0x31, 2)
-		elif button == 'down3':
+		elif button == 'd3':
 			self.btnLoop(0x31, 3)
-		elif button == 'down4':
+		elif button == 'd4':
 			self.btnLoop(0x31, 4)
-		elif button == 'down5':
+		elif button == 'd5':
 			self.btnLoop(0x31, 5)
-		elif button == 'down6':
+		elif button == 'd6':
 			self.btnLoop(0x31, 6)
-		elif button == 'down7':
+		elif button == 'd7':
 			self.btnLoop(0x31, 7)
-		elif button == 'down8':
+		elif button == 'd8':
 			self.btnLoop(0x31, 8)
-		elif button == 'down9':
+		elif button == 'd9':
 			self.btnLoop(0x31, 9)
-		elif button == 'left2':
+		elif button == 'l2':
 			self.btnLoop(0x32, 2)
-		elif button == 'left3':
+		elif button == 'l3':
 			self.btnLoop(0x32, 3)
-		elif button == 'left4':
+		elif button == 'l4':
 			self.btnLoop(0x32, 4)
-		elif button == 'left5':
+		elif button == 'l5':
 			self.btnLoop(0x32, 5)
-		elif button == 'left6':
+		elif button == 'l6':
 			self.btnLoop(0x32, 6)
-		elif button == 'left7':
+		elif button == 'l7':
 			self.btnLoop(0x32, 7)
-		elif button == 'left8':
+		elif button == 'l8':
 			self.btnLoop(0x32, 8)
-		elif button == 'left9':
+		elif button == 'l9':
 			self.btnLoop(0x32, 9)
-		elif button == 'right2':
+		elif button == 'r2':
 			self.btnLoop(0x33, 2)
-		elif button == 'right3':
+		elif button == 'r3':
 			self.btnLoop(0x33, 3)
-		elif button == 'right4':
+		elif button == 'r4':
 			self.btnLoop(0x33, 4)
-		elif button == 'right5':
+		elif button == 'r5':
 			self.btnLoop(0x33, 5)
-		elif button == 'right6':
+		elif button == 'r6':
 			self.btnLoop(0x33, 6)
-		elif button == 'right7':
+		elif button == 'r7':
 			self.btnLoop(0x33, 7)
-		elif button == 'right8':
+		elif button == 'r8':
 			self.btnLoop(0x33, 8)
-		elif button == 'right9':
+		elif button == 'r9':
 			self.btnLoop(0x33, 9)
 		elif button == 'a2':
 			self.btnLoop(0x34, 2)
@@ -328,75 +328,75 @@ class Game:
 			self.btnLoop(0x35, 8)
 		elif button == 'b9':
 			self.btnLoop(0x35, 9)
-		elif button == 'u+left2':
+		elif button == 'u+l2':
 			self.btnLoopCombo(0x30, 0x32, 2)
-		elif button == 'u+left3':
+		elif button == 'u+l3':
 			self.btnLoopCombo(0x30, 0x32, 3)
-		elif button == 'u+left4':
+		elif button == 'u+l4':
 			self.btnLoopCombo(0x30, 0x32, 4)
-		elif button == 'u+left5':
+		elif button == 'u+l5':
 			self.btnLoopCombo(0x30, 0x32, 5)
-		elif button == 'u+left6':
+		elif button == 'u+l6':
 			self.btnLoopCombo(0x30, 0x32, 6)
-		elif button == 'u+left7':
+		elif button == 'u+l7':
 			self.btnLoopCombo(0x30, 0x32, 7)
-		elif button == 'u+left8':
+		elif button == 'u+l8':
 			self.btnLoopCombo(0x30, 0x32, 8)
-		elif button == 'u+left9':
+		elif button == 'u+l9':
 			self.btnLoopCombo(0x30, 0x32, 9)
-		elif button == 'u+right2':
+		elif button == 'u+r2':
 			self.btnLoopCombo(0x30, 0x33, 2)
-		elif button == 'u+right3':
+		elif button == 'u+r3':
 			self.btnLoopCombo(0x30, 0x33, 3)
-		elif button == 'u+right4':
+		elif button == 'u+r4':
 			self.btnLoopCombo(0x30, 0x33, 4)
-		elif button == 'u+right5':
+		elif button == 'u+r5':
 			self.btnLoopCombo(0x30, 0x33, 5)
-		elif button == 'u+right6':
+		elif button == 'u+r6':
 			self.btnLoopCombo(0x30, 0x33, 6)
-		elif button == 'u+right7':
+		elif button == 'u+r7':
 			self.btnLoopCombo(0x30, 0x33, 7)
-		elif button == 'u+right8':
+		elif button == 'u+r8':
 			self.btnLoopCombo(0x30, 0x33, 8)
-		elif button == 'u+right9':
+		elif button == 'u+r9':
 			self.btnLoopCombo(0x30, 0x33, 9)
-		elif button == 'd+left2':
+		elif button == 'd+l2':
 			self.btnLoopCombo(0x31, 0x32, 2)
-		elif button == 'd+left3':
+		elif button == 'd+l3':
 			self.btnLoopCombo(0x31, 0x32, 3)
-		elif button == 'd+left4':
+		elif button == 'd+l4':
 			self.btnLoopCombo(0x31, 0x32, 4)
-		elif button == 'd+left5':
+		elif button == 'd+l5':
 			self.btnLoopCombo(0x31, 0x32, 5)
-		elif button == 'd+left6':
+		elif button == 'd+l6':
 			self.btnLoopCombo(0x31, 0x32, 6)
-		elif button == 'd+left7':
+		elif button == 'd+l7':
 			self.btnLoopCombo(0x31, 0x32, 7)
-		elif button == 'd+left8':
+		elif button == 'd+l8':
 			self.btnLoopCombo(0x31, 0x32, 8)
-		elif button == 'd+left9':
+		elif button == 'd+l9':
 			self.btnLoopCombo(0x31, 0x32, 9)
-		elif button == 'd+right2':
+		elif button == 'd+r2':
 			self.btnLoopCombo(0x31, 0x33, 2)
-		elif button == 'd+right3':
+		elif button == 'd+r3':
 			self.btnLoopCombo(0x31, 0x33, 3)
-		elif button == 'd+right4':
+		elif button == 'd+r4':
 			self.btnLoopCombo(0x31, 0x33, 4)
-		elif button == 'd+right5':
+		elif button == 'd+r5':
 			self.btnLoopCombo(0x31, 0x33, 5)
-		elif button == 'd+right6':
+		elif button == 'd+r6':
 			self.btnLoopCombo(0x31, 0x33, 6)
-		elif button == 'd+right7':
+		elif button == 'd+r7':
 			self.btnLoopCombo(0x31, 0x33, 7)
-		elif button == 'd+right8':
+		elif button == 'd+r8':
 			self.btnLoopCombo(0x31, 0x33, 8)
-		elif button == 'd+right9':
+		elif button == 'd+r9':
 			self.btnLoopCombo(0x31, 0x33, 9)
-		elif button == 'save' and (username == 'moderator1' or username == 'moderator2' or username == 'moderator3'):
+		elif button == 'save' and (username == 'mod1' or username == 'mod2' or username == 'mod3'):
 			win32api.keybd_event(0x43, 0, 0, 0)
 			time.sleep(.15)
 			win32api.keybd_event(0x43, 0, win32con.KEYEVENTF_KEYUP, 0)
-		elif button == 'load' and (username == 'moderator1' or username == 'moderator2' or username == 'moderator3'):
+		elif button == 'load' and (username == 'mod1' or username == 'mod2' or username == 'mod3'):
 			win32api.keybd_event(0x44, 0, 0, 0)
 			time.sleep(.15)
 			win32api.keybd_event(0x44, 0, win32con.KEYEVENTF_KEYUP, 0)
