@@ -17,7 +17,8 @@ class Game:
 		'select': 0x39,
 		'l': 0x41,
 		'r': 0x42,
-		'save': 0x43,
+		'save': 0x00,
+		'load': 0x00,
 		'l+a': 0x00,
 		'l+r': 0x00,
 		'a+b': 0x00,
@@ -171,7 +172,8 @@ class Game:
 			win32api.keybd_event(y, 0, win32con.KEYEVENTF_KEYUP, 0)
 			time.sleep(.5)
 			loopCntr+=1
-	def push_button(self, button):
+	# Ensure bot.py provides the username
+	def push_button(self, button, username):
 		# How much elifs does it take to disorient a programmer?
 		# Too many to count
 		if button == 'l+a':
@@ -390,6 +392,14 @@ class Game:
 			self.btnLoopCombo(0x31, 0x33, 8)
 		elif button == 'd+right9':
 			self.btnLoopCombo(0x31, 0x33, 9)
+		elif button == 'save' and username == 'moderator1' or 'moderator2' or 'moderator3':
+			win32api.keybd_event(0x43, 0, 0, 0)
+			time.sleep(.15)
+			win32api.keybd_event(0x43, 0, win32con.KEYEVENTF_KEYUP, 0)
+		elif button == 'load' and username == 'moderator1' or 'moderator2' or 'moderator3':
+			win32api.keybd_event(0x44, 0, 0, 0)
+			time.sleep(.15)
+			win32api.keybd_event(0x44, 0, win32con.KEYEVENTF_KEYUP, 0)
 		else:
 			win32api.keybd_event(self.button_to_key(button), 0, 0, 0)
 			time.sleep(.15)
