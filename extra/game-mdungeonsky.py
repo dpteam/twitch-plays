@@ -5,90 +5,81 @@ import time
 class Game:
 	keymap = {
 		# Comment out any button(s) that would be unused
-		'u': 0x30,
-		'd': 0x31,
-		'l': 0x32,
-		'r': 0x33,
+		'n': 0x30,
+		's': 0x31,
+		'w': 0x32,
+		'e': 0x33,
 		'a': 0x34,
 		'b': 0x35,
 		'x': 0x36,
 		'y': 0x37,
 		'st': 0x38,
 		'sl': 0x39,
-		'l*': 0x41,
-		'r*': 0x42,
+		'l': 0x41,
+		'r': 0x42,
 		'save': 0x00,
 		'load': 0x00,
-		'l*+a': 0x00,
-		'l*+b': 0x00,
-		'l*+r*': 0x00,
-		'a+b': 0x00,
+		'l+a': 0x00,
+		'l+b': 0x00,
+		'l+r': 0x00,
 		'b+a': 0x00,
-		'b+u': 0x00,
-		'b+d': 0x00,
-		'b+l': 0x00,
-		'b+r': 0x00,
-		'b+ul': 0x00,
-		'b+ur': 0x00,
-		'b+dl': 0x00,
-		'b+dr': 0x00,
-		'b+lu': 0x00,
-		'b+ru': 0x00,
-		'b+ld': 0x00,
-		'b+rd': 0x00,
-		'r*+a': 0x00,
-		'r*+u': 0x00,
-		'r*+d': 0x00,
-		'r*+l': 0x00,
-		'r*+r': 0x00,
-		'x+u': 0x00,
-		'x+d': 0x00,
-		'x+l': 0x00,
-		'x+r': 0x00,
-		'y+u': 0x00,
-		'y+d': 0x00,
-		'y+l': 0x00,
-		'y+r': 0x00,
-		'u+l': 0x00,
-		'u+r': 0x00,
-		'd+l': 0x00,
-		'd+r': 0x00,
-		'l+u': 0x00,
-		'r+u': 0x00,
-		'l+d': 0x00,
-		'r+d': 0x00,
-		'u2': 0x00,
-		'u3': 0x00,
-		'u4': 0x00,
-		'u5': 0x00,
-		'u6': 0x00,
-		'u7': 0x00,
-		'u8': 0x00,
-		'u9': 0x00,
-		'd2': 0x00,
-		'd3': 0x00,
-		'd4': 0x00,
-		'd5': 0x00,
-		'd6': 0x00,
-		'd7': 0x00,
-		'd8': 0x00,
-		'd9': 0x00,
-		'l2': 0x00,
-		'l3': 0x00,
-		'l4': 0x00,
-		'l5': 0x00,
-		'l6': 0x00,
-		'l7': 0x00,
-		'l8': 0x00,
-		'l9': 0x00,
-		'r2': 0x00,
-		'r3': 0x00,
-		'r4': 0x00,
-		'r5': 0x00,
-		'r6': 0x00,
-		'r7': 0x00,
-		'r8': 0x00,
-		'r9': 0x00,
+		'b+n': 0x00,
+		'b+s': 0x00,
+		'b+w': 0x00,
+		'b+e': 0x00,
+		'b+nw': 0x00,
+		'b+ne': 0x00,
+		'b+sw': 0x00,
+		'b+se': 0x00,
+		'r+a': 0x00,
+		'r+n': 0x00,
+		'r+s': 0x00,
+		'r+w': 0x00,
+		'r+e': 0x00,
+		'x+n': 0x00,
+		'x+s': 0x00,
+		'x+w': 0x00,
+		'x+e': 0x00,
+		'y+n': 0x00,
+		'y+s': 0x00,
+		'y+w': 0x00,
+		'y+e': 0x00,
+		'nw': 0x00,
+		'ne': 0x00,
+		'sw': 0x00,
+		'se': 0x00,
+		'n2': 0x00,
+		'n3': 0x00,
+		'n4': 0x00,
+		'n5': 0x00,
+		'n6': 0x00,
+		'n7': 0x00,
+		'n8': 0x00,
+		'n9': 0x00,
+		's2': 0x00,
+		's3': 0x00,
+		's4': 0x00,
+		's5': 0x00,
+		's6': 0x00,
+		's7': 0x00,
+		's8': 0x00,
+		's9': 0x00,
+		'w2': 0x00,
+		'w3': 0x00,
+		'w4': 0x00,
+		'w5': 0x00,
+		'w6': 0x00,
+		'w7': 0x00,
+		'w8': 0x00,
+		'w9': 0x00,
+		'e2': 0x00,
+		'e3': 0x00,
+		'e4': 0x00,
+		'e5': 0x00,
+		'e6': 0x00,
+		'e7': 0x00,
+		'e8': 0x00,
+		'e9': 0x00,
 		'a2': 0x00,
 		'a3': 0x00,
 		'a4': 0x00,
@@ -105,70 +96,70 @@ class Game:
 		'b7': 0x00,
 		'b8': 0x00,
 		'b9': 0x00,
-		'u+l2': 0x00,
-		'u+l3': 0x00,
-		'u+l4': 0x00,
-		'u+l5': 0x00,
-		'u+l6': 0x00,
-		'u+l7': 0x00,
-		'u+l8': 0x00,
-		'u+l9': 0x00,
-		'u+r2': 0x00,
-		'u+r3': 0x00,
-		'u+r4': 0x00,
-		'u+r5': 0x00,
-		'u+r6': 0x00,
-		'u+r7': 0x00,
-		'u+r8': 0x00,
-		'u+r9': 0x00,
-		'd+l2': 0x00,
-		'd+l3': 0x00,
-		'd+l4': 0x00,
-		'd+l5': 0x00,
-		'd+l6': 0x00,
-		'd+l7': 0x00,
-		'd+l8': 0x00,
-		'd+l9': 0x00,
-		'd+r2': 0x00,
-		'd+r3': 0x00,
-		'd+r4': 0x00,
-		'd+r5': 0x00,
-		'd+r6': 0x00,
-		'd+r7': 0x00,
-		'd+r8': 0x00,
-		'd+r9': 0x00,
-		'l+u2': 0x00,
-		'l+u3': 0x00,
-		'l+u4': 0x00,
-		'l+u5': 0x00,
-		'l+u6': 0x00,
-		'l+u7': 0x00,
-		'l+u8': 0x00,
-		'l+u9': 0x00,
-		'r+u2': 0x00,
-		'r+u3': 0x00,
-		'r+u4': 0x00,
-		'r+u5': 0x00,
-		'r+u6': 0x00,
-		'r+u7': 0x00,
-		'r+u8': 0x00,
-		'r+u9': 0x00,
-		'l+d2': 0x00,
-		'l+d3': 0x00,
-		'l+d4': 0x00,
-		'l+d5': 0x00,
-		'l+d6': 0x00,
-		'l+d7': 0x00,
-		'l+d8': 0x00,
-		'l+d9': 0x00,
-		'r+d2': 0x00,
-		'r+d3': 0x00,
-		'r+d4': 0x00,
-		'r+d5': 0x00,
-		'r+d6': 0x00,
-		'r+d7': 0x00,
-		'r+d8': 0x00,
-		'r+d9': 0x00
+		'nw2': 0x00,
+		'nw3': 0x00,
+		'nw4': 0x00,
+		'nw5': 0x00,
+		'nw6': 0x00,
+		'nw7': 0x00,
+		'nw8': 0x00,
+		'nw9': 0x00,
+		'ne2': 0x00,
+		'ne3': 0x00,
+		'ne4': 0x00,
+		'ne5': 0x00,
+		'ne6': 0x00,
+		'ne7': 0x00,
+		'ne8': 0x00,
+		'ne9': 0x00,
+		'sw2': 0x00,
+		'sw3': 0x00,
+		'sw4': 0x00,
+		'sw5': 0x00,
+		'sw6': 0x00,
+		'sw7': 0x00,
+		'sw8': 0x00,
+		'sw9': 0x00,
+		'se2': 0x00,
+		'se3': 0x00,
+		'se4': 0x00,
+		'se5': 0x00,
+		'se6': 0x00,
+		'se7': 0x00,
+		'se8': 0x00,
+		'se9': 0x00,
+		'w+u2': 0x00,
+		'w+u3': 0x00,
+		'w+u4': 0x00,
+		'w+u5': 0x00,
+		'w+u6': 0x00,
+		'w+u7': 0x00,
+		'w+u8': 0x00,
+		'w+u9': 0x00,
+		'e+u2': 0x00,
+		'e+u3': 0x00,
+		'e+u4': 0x00,
+		'e+u5': 0x00,
+		'e+u6': 0x00,
+		'e+u7': 0x00,
+		'e+u8': 0x00,
+		'e+u9': 0x00,
+		'w+d2': 0x00,
+		'w+d3': 0x00,
+		'w+d4': 0x00,
+		'w+d5': 0x00,
+		'w+d6': 0x00,
+		'w+d7': 0x00,
+		'w+d8': 0x00,
+		'w+d9': 0x00,
+		'e+d2': 0x00,
+		'e+d3': 0x00,
+		'e+d4': 0x00,
+		'e+d5': 0x00,
+		'e+d6': 0x00,
+		'e+d7': 0x00,
+		'e+d8': 0x00,
+		'e+d9': 0x00
 	}
 	def get_valid_buttons(self):
 		return [button for button in self.keymap.keys()]
@@ -224,127 +215,127 @@ class Game:
 	def push_button(self, button, username):
 		# How much elifs does it take to disorient a programmer?
 		# Too many to count
-		if button == 'l*+a':
+		if button == 'l+a':
 			self.btnCombo(0x41, 0x34)
-		elif button == 'l*+b':
+		elif button == 'l+b':
 			self.btnCombo(0x41, 0x35)
-		elif button == 'l*+r*':
+		elif button == 'l+r':
 			self.btnCombo(0x41, 0x42)
-		elif button == 'b+u':
+		elif button == 'b+n':
 			self.btnRun(0x30)
-		elif button == 'b+d':
+		elif button == 'b+s':
 			self.btnRun(0x31)
-		elif button == 'b+l':
+		elif button == 'b+w':
 			self.btnRun(0x32)
-		elif button == 'b+r':
+		elif button == 'b+e':
 			self.btnRun(0x33)
-		elif button == 'a+b' or button == 'b+a':
+		elif button == 'b+a':
 			self.btnRun(0x34)
-		elif button == 'b+ul' or button == 'b+lu':
+		elif button == 'b+nw':
 			self.btnRunCombo(0x30, 0x32)
-		elif button == 'b+ur' or button == 'b+ru':
+		elif button == 'b+ne':
 			self.btnRunCombo(0x30, 0x33)
-		elif button == 'b+dl' or button == 'b+ld':
+		elif button == 'b+sw':
 			self.btnRunCombo(0x31, 0x32)
-		elif button == 'b+dr' or button == 'b+rd':
+		elif button == 'b+se':
 			self.btnRunCombo(0x31, 0x33)
-		elif button == 'r*+u':
+		elif button == 'r+n':
 			self.btnCombo(0x42, 0x30)
-		elif button == 'r*+d':
+		elif button == 'r+s':
 			self.btnCombo(0x42, 0x31)
-		elif button == 'r*+l':
+		elif button == 'r+w':
 			self.btnCombo(0x42, 0x32)
-		elif button == 'r*+r':
+		elif button == 'r+e':
 			self.btnCombo(0x42, 0x33)
-		elif button == 'r*+a':
+		elif button == 'r+a':
 			self.btnCombo(0x42, 0x34)
-		elif button == 'u+l' or button == 'l+u':
+		elif button == 'nw':
 			self.btnCombo(0x30, 0x32)
-		elif button == 'u+r' or button == 'r+u':
+		elif button == 'ne':
 			self.btnCombo(0x30, 0x33)
-		elif button == 'd+l' or button == 'l+d':
+		elif button == 'sw':
 			self.btnCombo(0x31, 0x32)
-		elif button == 'd+r' or button == 'r+d':
+		elif button == 'se':
 			self.btnCombo(0x31, 0x33)
-		elif button == 'x+u':
+		elif button == 'x+n':
 			self.btnCombo(0x36, 0x30)
-		elif button == 'x+d':
+		elif button == 'x+s':
 			self.btnCombo(0x36, 0x31)
-		elif button == 'x+l':
+		elif button == 'x+w':
 			self.btnCombo(0x36, 0x32)
-		elif button == 'x+r':
+		elif button == 'x+e':
 			self.btnCombo(0x36, 0x33)
-		elif button == 'y+u':
+		elif button == 'y+n':
 			self.btnHoldCombo(0x37, 0x30)
-		elif button == 'y+d':
+		elif button == 'y+s':
 			self.btnHoldCombo(0x37, 0x31)
-		elif button == 'y+l':
+		elif button == 'y+w':
 			self.btnHoldCombo(0x37, 0x32)
-		elif button == 'y+r':
+		elif button == 'y+e':
 			self.btnHoldCombo(0x37, 0x33)
-		elif button == 'u2':
+		elif button == 'n2':
 			self.btnLoop(0x30, 2)
-		elif button == 'u3':
+		elif button == 'n3':
 			self.btnLoop(0x30, 3)
-		elif button == 'u4':
+		elif button == 'n4':
 			self.btnLoop(0x30, 4)
-		elif button == 'u5':
+		elif button == 'n5':
 			self.btnLoop(0x30, 5)
-		elif button == 'u6':
+		elif button == 'n6':
 			self.btnLoop(0x30, 6)
-		elif button == 'u7':
+		elif button == 'n7':
 			self.btnLoop(0x30, 7)
-		elif button == 'u8':
+		elif button == 'n8':
 			self.btnLoop(0x30, 8)
-		elif button == 'u9':
+		elif button == 'n9':
 			self.btnLoop(0x30, 9)
-		elif button == 'd2':
+		elif button == 's2':
 			self.btnLoop(0x31, 2)
-		elif button == 'd3':
+		elif button == 's3':
 			self.btnLoop(0x31, 3)
-		elif button == 'd4':
+		elif button == 's4':
 			self.btnLoop(0x31, 4)
-		elif button == 'd5':
+		elif button == 's5':
 			self.btnLoop(0x31, 5)
-		elif button == 'd6':
+		elif button == 's6':
 			self.btnLoop(0x31, 6)
-		elif button == 'd7':
+		elif button == 's7':
 			self.btnLoop(0x31, 7)
-		elif button == 'd8':
+		elif button == 's8':
 			self.btnLoop(0x31, 8)
-		elif button == 'd9':
+		elif button == 's9':
 			self.btnLoop(0x31, 9)
-		elif button == 'l2':
+		elif button == 'w2':
 			self.btnLoop(0x32, 2)
-		elif button == 'l3':
+		elif button == 'w3':
 			self.btnLoop(0x32, 3)
-		elif button == 'l4':
+		elif button == 'w4':
 			self.btnLoop(0x32, 4)
-		elif button == 'l5':
+		elif button == 'w5':
 			self.btnLoop(0x32, 5)
-		elif button == 'l6':
+		elif button == 'w6':
 			self.btnLoop(0x32, 6)
-		elif button == 'l7':
+		elif button == 'w7':
 			self.btnLoop(0x32, 7)
-		elif button == 'l8':
+		elif button == 'w8':
 			self.btnLoop(0x32, 8)
-		elif button == 'l9':
+		elif button == 'w9':
 			self.btnLoop(0x32, 9)
-		elif button == 'r2':
+		elif button == 'e2':
 			self.btnLoop(0x33, 2)
-		elif button == 'r3':
+		elif button == 'e3':
 			self.btnLoop(0x33, 3)
-		elif button == 'r4':
+		elif button == 'e4':
 			self.btnLoop(0x33, 4)
-		elif button == 'r5':
+		elif button == 'e5':
 			self.btnLoop(0x33, 5)
-		elif button == 'r6':
+		elif button == 'e6':
 			self.btnLoop(0x33, 6)
-		elif button == 'r7':
+		elif button == 'e7':
 			self.btnLoop(0x33, 7)
-		elif button == 'r8':
+		elif button == 'e8':
 			self.btnLoop(0x33, 8)
-		elif button == 'r9':
+		elif button == 'e9':
 			self.btnLoop(0x33, 9)
 		elif button == 'a2':
 			self.btnLoop(0x34, 2)
@@ -378,69 +369,69 @@ class Game:
 			self.btnLoop(0x35, 8)
 		elif button == 'b9':
 			self.btnLoop(0x35, 9)
-		elif button == 'u+l2' or button == 'l+u2':
+		elif button == 'nw2':
 			self.btnLoopCombo(0x30, 0x32, 2)
-		elif button == 'u+l3' or button == 'l+u3':
+		elif button == 'nw3':
 			self.btnLoopCombo(0x30, 0x32, 3)
-		elif button == 'u+l4' or button == 'l+u4':
+		elif button == 'nw4':
 			self.btnLoopCombo(0x30, 0x32, 4)
-		elif button == 'u+l5' or button == 'l+u5':
+		elif button == 'nw5':
 			self.btnLoopCombo(0x30, 0x32, 5)
-		elif button == 'u+l6' or button == 'l+u6':
+		elif button == 'nw6':
 			self.btnLoopCombo(0x30, 0x32, 6)
-		elif button == 'u+l7' or button == 'l+u7':
+		elif button == 'nw7':
 			self.btnLoopCombo(0x30, 0x32, 7)
-		elif button == 'u+l8' or button == 'l+u8':
+		elif button == 'nw8':
 			self.btnLoopCombo(0x30, 0x32, 8)
-		elif button == 'u+l9' or button == 'l+u9':
+		elif button == 'nw9':
 			self.btnLoopCombo(0x30, 0x32, 9)
-		elif button == 'u+r2' or button == 'r+u2':
+		elif button == 'ne2':
 			self.btnLoopCombo(0x30, 0x33, 2)
-		elif button == 'u+r3' or button == 'r+u3':
+		elif button == 'ne3':
 			self.btnLoopCombo(0x30, 0x33, 3)
-		elif button == 'u+r4' or button == 'r+u4':
+		elif button == 'ne4':
 			self.btnLoopCombo(0x30, 0x33, 4)
-		elif button == 'u+r5' or button == 'r+u5':
+		elif button == 'ne5':
 			self.btnLoopCombo(0x30, 0x33, 5)
-		elif button == 'u+r6' or button == 'r+u6':
+		elif button == 'ne6':
 			self.btnLoopCombo(0x30, 0x33, 6)
-		elif button == 'u+r7' or button == 'r+u7':
+		elif button == 'ne7':
 			self.btnLoopCombo(0x30, 0x33, 7)
-		elif button == 'u+r8' or button == 'r+u8':
+		elif button == 'ne8':
 			self.btnLoopCombo(0x30, 0x33, 8)
-		elif button == 'u+r9' or button == 'r+u9':
+		elif button == 'ne9':
 			self.btnLoopCombo(0x30, 0x33, 9)
-		elif button == 'd+l2' or button == 'l+d2':
+		elif button == 'sw2':
 			self.btnLoopCombo(0x31, 0x32, 2)
-		elif button == 'd+l3' or button == 'l+d3':
+		elif button == 'sw3':
 			self.btnLoopCombo(0x31, 0x32, 3)
-		elif button == 'd+l4' or button == 'l+d4':
+		elif button == 'sw4':
 			self.btnLoopCombo(0x31, 0x32, 4)
-		elif button == 'd+l5' or button == 'l+d5':
+		elif button == 'sw5':
 			self.btnLoopCombo(0x31, 0x32, 5)
-		elif button == 'd+l6' or button == 'l+d6':
+		elif button == 'sw6':
 			self.btnLoopCombo(0x31, 0x32, 6)
-		elif button == 'd+l7' or button == 'l+d7':
+		elif button == 'sw7':
 			self.btnLoopCombo(0x31, 0x32, 7)
-		elif button == 'd+l8' or button == 'l+d8':
+		elif button == 'sw8':
 			self.btnLoopCombo(0x31, 0x32, 8)
-		elif button == 'd+l9' or button == 'l+d9':
+		elif button == 'sw9':
 			self.btnLoopCombo(0x31, 0x32, 9)
-		elif button == 'd+r2' or button == 'r+d2':
+		elif button == 'se2':
 			self.btnLoopCombo(0x31, 0x33, 2)
-		elif button == 'd+r3' or button == 'r+d3':
+		elif button == 'se3':
 			self.btnLoopCombo(0x31, 0x33, 3)
-		elif button == 'd+r4' or button == 'r+d4':
+		elif button == 'se4':
 			self.btnLoopCombo(0x31, 0x33, 4)
-		elif button == 'd+r5' or button == 'r+d5':
+		elif button == 'se5':
 			self.btnLoopCombo(0x31, 0x33, 5)
-		elif button == 'd+r6' or button == 'r+d6':
+		elif button == 'se6':
 			self.btnLoopCombo(0x31, 0x33, 6)
-		elif button == 'd+r7' or button == 'r+d7':
+		elif button == 'se7':
 			self.btnLoopCombo(0x31, 0x33, 7)
-		elif button == 'd+r8' or button == 'r+d8':
+		elif button == 'se8':
 			self.btnLoopCombo(0x31, 0x33, 8)
-		elif button == 'd+r9' or button == 'r+d9':
+		elif button == 'se9':
 			self.btnLoopCombo(0x31, 0x33, 9)
 		elif button == 'save' and (username == 'mod1' or username == 'mod2' or username == 'mod3'):
 			win32api.keybd_event(0x43, 0, 0, 0)
