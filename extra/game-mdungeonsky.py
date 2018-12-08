@@ -441,6 +441,8 @@ class Game:
 			win32api.keybd_event(0x44, 0, 0, 0)
 			time.sleep(.15)
 			win32api.keybd_event(0x44, 0, win32con.KEYEVENTF_KEYUP, 0)
+		elif button == 'dialog' and (username == 'mod1' or username == 'mod2' or username == 'mod3'):
+			self.btnLoop(0x34, 25)
 		else:
 			win32api.keybd_event(self.button_to_key(button), 0, 0, 0)
 			time.sleep(.15)
