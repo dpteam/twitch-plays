@@ -22,7 +22,7 @@ class Game:
 		'l+a': 0x00,
 		'l+b': 0x00,
 		'l+r': 0x00,
-		'b+a': 0x00,
+		'a+b': 0x00,
 		'b+n': 0x00,
 		'b+s': 0x00,
 		'b+w': 0x00,
@@ -159,7 +159,8 @@ class Game:
 		'e+d6': 0x00,
 		'e+d7': 0x00,
 		'e+d8': 0x00,
-		'e+d9': 0x00
+		'e+d9': 0x00,
+		'dialog': 0x00
 	}
 	def get_valid_buttons(self):
 		return [button for button in self.keymap.keys()]
@@ -229,7 +230,7 @@ class Game:
 			self.btnRun(0x32)
 		elif button == 'b+e':
 			self.btnRun(0x33)
-		elif button == 'b+a':
+		elif button == 'a+b':
 			self.btnRun(0x34)
 		elif button == 'b+nw':
 			self.btnRunCombo(0x30, 0x32)
@@ -433,6 +434,8 @@ class Game:
 			self.btnLoopCombo(0x31, 0x33, 8)
 		elif button == 'se9':
 			self.btnLoopCombo(0x31, 0x33, 9)
+		elif button == 'dialog':
+			self.btnLoop(0x34, 25)
 		elif button == 'save' and (username == 'mod1' or username == 'mod2' or username == 'mod3'):
 			win32api.keybd_event(0x43, 0, 0, 0)
 			time.sleep(.15)
@@ -441,8 +444,6 @@ class Game:
 			win32api.keybd_event(0x44, 0, 0, 0)
 			time.sleep(.15)
 			win32api.keybd_event(0x44, 0, win32con.KEYEVENTF_KEYUP, 0)
-		elif button == 'dialog' and (username == 'mod1' or username == 'mod2' or username == 'mod3'):
-			self.btnLoop(0x34, 25)
 		else:
 			win32api.keybd_event(self.button_to_key(button), 0, 0, 0)
 			time.sleep(.15)
