@@ -435,7 +435,7 @@ class Game:
 		elif button == 'se9':
 			self.btnLoopCombo(0x31, 0x33, 9)
 		elif button == 'dialog':
-			self.btnLoop(0x34, 25)
+			self.btnLoop(0x34, 40)
 		elif button == 'save' and (username == 'mod1' or username == 'mod2' or username == 'mod3'):
 			win32api.keybd_event(0x43, 0, 0, 0)
 			time.sleep(.15)
